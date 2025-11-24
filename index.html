@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pintura Industrial y Automotriz | Calidad Experta</title>
+    <meta name="description" content="Especialistas en Pintura Industrial y estética automotriz. Resultados de alta calidad.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'taller-black': '#0f172a',
+                        'taller-dark': '#1e293b',
+                        'taller-accent': '#f59e0b', 
+                        'taller-accent-hover': '#d97706',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                        'display': ['Orbitron', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1626246960952-0443871e16b5?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        /* Animación suave para el cambio de imagen */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-taller-black text-gray-100 font-sans scroll-smooth">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-taller-black/95 border-b border-gray-800 backdrop-blur-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i data-lucide="paint-bucket" class="h-8 w-8 text-taller-accent"></i>
+                    <span class="font-display font-bold text-xl md:text-2xl tracking-wider text-white">PINTURA<span class="text-taller-accent">INDUSTRIAL</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio" class="hover:text-taller-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
+                        <a href="#servicios" class="hover:text-taller-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Servicios</a>
+                        <a href="#galeria" class="hover:text-taller-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Galería</a>
+                        <a href="#ubicacion" class="hover:text-taller-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Ubicación</a>
+                        <a href="#contacto" class="bg-taller-accent text-taller-black hover:bg-taller-accent-hover px-4 py-2 rounded-md text-sm font-bold transition-colors">Cotizar</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-taller-dark border-t border-gray-700" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" onclick="toggleMenu()" class="text-gray-300 hover:text-taller-accent block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#servicios" onclick="toggleMenu()" class="text-gray-300 hover:text-taller-accent block px-3 py-2 rounded-md text-base font-medium">Servicios</a>
+                <a href="#galeria" onclick="toggleMenu()" class="text-gray-300 hover:text-taller-accent block px-3 py-2 rounded-md text-base font-medium">Galería</a>
+                <a href="#ubicacion" onclick="toggleMenu()" class="text-gray-300 hover:text-taller-accent block px-3 py-2 rounded-md text-base font-medium">Ubicación</a>
+                <a href="#contacto" onclick="toggleMenu()" class="text-taller-accent font-bold block px-3 py-2 rounded-md text-base">¡Contáctanos!</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-4xl mx-auto mt-16">
+            <div class="inline-block p-2 px-4 rounded-full bg-taller-accent/20 border border-taller-accent/50 mb-6 backdrop-blur-md">
+                <span class="text-taller-accent font-bold tracking-wide text-sm uppercase">Especialistas en Estética</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
+                Pintura Automotriz <br> y <span class="text-transparent bg-clip-text bg-gradient-to-r from-taller-accent to-yellow-200">Restauración Industrial</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                Aplicación profesional de recubrimientos, pintura automotriz y detallado de alto nivel. Transformamos superficies con calidad industrial.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5219931098186" target="_blank" class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-green-900/50">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    Cotizar Ahora
+                </a>
+                <a href="#galeria" class="flex items-center justify-center gap-2 bg-transparent border-2 border-white hover:bg-white hover:text-taller-black text-white px-8 py-4 rounded-full text-lg font-bold transition-all">
+                    Ver Proyectos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-20 bg-taller-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Nuestros Servicios</h2>
+                <div class="h-1 w-24 bg-taller-accent mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-taller-dark p-8 rounded-2xl border border-gray-700 hover:border-taller-accent transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-taller-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-taller-accent transition-colors">
+                        <i data-lucide="factory" class="w-8 h-8 text-taller-accent group-hover:text-taller-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Pintura Industrial</h3>
+                    <p class="text-gray-400">Recubrimientos epóxicos y poliuretanos para maquinaria, estructuras metálicas y equipos pesados.</p>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-taller-dark p-8 rounded-2xl border border-gray-700 hover:border-taller-accent transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-taller-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-taller-accent transition-colors">
+                        <i data-lucide="car" class="w-8 h-8 text-taller-accent group-hover:text-taller-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Repintado Automotriz</h3>
+                    <p class="text-gray-400">Igualación de color por computadora, pintura general (baño de pintura) y corrección de barniz.</p>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-taller-dark p-8 rounded-2xl border border-gray-700 hover:border-taller-accent transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-taller-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-taller-accent transition-colors">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-taller-accent group-hover:text-taller-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Sandblasting</h3>
+                    <p class="text-gray-400">Limpieza profunda de superficies metálicas con chorro de arena para eliminar óxido e impurezas.</p>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-taller-dark p-8 rounded-2xl border border-gray-700 hover:border-taller-accent transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-taller-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-taller-accent transition-colors">
+                        <i data-lucide="wrench" class="w-8 h-8 text-taller-accent group-hover:text-taller-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Restauración y Mantenimiento</h3>
+                    <p class="text-gray-400">Reparación estética de daños, golpes, abolladuras, rayones y desgaste.</p>
+                </div>
+                
+                <!-- Servicio 5 -->
+                <div class="bg-taller-dark p-8 rounded-2xl border border-gray-700 hover:border-taller-accent transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-taller-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-taller-accent transition-colors">
+                        <i data-lucide="sparkles" class="w-8 h-8 text-taller-accent group-hover:text-taller-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Pulido y Encerado</h3>
+                    <p class="text-gray-400">Cobertura y eliminación de daños superciales mediante pulidoras orbitales y recubrimiento anticorrosivo.</p>
+                </div>
+                <!-- Servicio 6 -->
+                <div class="bg-taller-dark p-8 rounded-2xl border border-gray-700 hover:border-taller-accent transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-taller-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-taller-accent transition-colors">
+                        <i data-lucide="truck" class="w-8 h-8 text-taller-accent group-hover:text-taller-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Trabajo en Sitio</h3>
+                    <p class="text-gray-400">Nuestros técnicos realizan trabajo en la locación del cliente para maquinaria pesada.</p>
+                </div>                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Interactiva -->
+    <section id="galeria" class="py-20 bg-taller-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-2">Galería de Transformaciones</h2>
+                    <p class="text-taller-accent font-medium">Nuestros Trabajos</p>
+                </div>
+            </div>
+
+            <!-- Grid Galería (Las imágenes se generan con JS abajo, pero dejamos la estructura base) -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- El contenido se llena dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación (Nueva Sección) -->
+    <section id="ubicacion" class="py-20 bg-taller-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Nuestra Ubicación</h2>
+                <div class="h-1 w-24 bg-taller-accent mx-auto rounded"></div>
+
+                <p class="mt-4 text-gray-400">C. Baltazar Ramirez y Perif. Carlos Pellicer Cámara, a 5 min de Plaza Altabrisa</p>
+            </div>
+            
+            <!-- Contenedor del Mapa -->
+            <div class="bg-taller-dark p-2 rounded-2xl border border-gray-700 shadow-2xl h-[400px] w-full relative overflow-hidden">
+                <!-- Iframe de Google Maps (Ejemplo Genérico - Cambiar src con el real) -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3795.2103814662782!2d-92.94954582482158!3d17.968946483020854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDU4JzA4LjIiTiA5MsKwNTYnNDkuMSJX!5e0!3m2!1sen!2smx!4v1763950644855!5m2!1sen!2smx" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; border-radius: 1rem;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+                <p class="mt-4 text-gray-400">Visítanos para una cotización física sin compromiso.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-taller-dark relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-gradient-to-br from-taller-black to-gray-900 rounded-3xl p-8 md:p-12 border border-gray-700 shadow-2xl text-center">
+                <h2 class="text-3xl font-display font-bold text-white mb-6">¿Tienes un proyecto en mente?</h2>
+                <p class="text-gray-400 mb-8">Envíanos fotos o especificaciones para darte una cotización.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/5219931098186" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-3 transition-colors">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        WhatsApp
+                    </a>
+                    <a href="tel:+5219931098186" class="bg-gray-700 border-2 border-gray-600 hover:border-taller-accent text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-3 transition-colors">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
+                        Llamar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-6 border-t border-gray-900">
+
+        <!-- Redes Sociales -->
+        <!-- section class="bg-taller-dark py-8 border-t border-gray-800"-->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-400 text-sm md:text-base">
+                    Síguenos en redes:
+                </p>
+
+                <div class="flex gap-4">
+
+                    <!-- Instagram -->
+                    <a 
+                        href="https://www.instagram.com/TU_USUARIO_INSTAGRAM" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-2 text-gray-300 hover:text-taller-accent transition-colors"
+                    >
+                        <div class="w-12 h-12 rounded-full items-center justify-center hover:border-taller-accent transition-colors">
+                            <img
+                                src="img/socials/igm.svg"
+                                alt="Instagram"
+                                class="w-12 h-12 rounded-full object-cover"
+                            >
+                        </div>
+                        <span class="text-sm font-medium hidden sm:inline">Instagram</span>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a
+                        href="https://www.tiktok.com/@TU_USUARIO_TIKTOK"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-2 text-gray-300 hover:text-taller-accent transition-colors"
+                    >
+                        <div class="w-11 h-11 rounded-full items-center justify-center hover:border-taller-accent transition-colors"">
+                            <img
+                                src="img/socials/tk.svg"
+                                alt="Facebook"
+                                class="w-11 h-11 rounded-full object-cover"
+                            >
+                        </div>
+                        <span class="text-sm font-medium hidden sm:inline">Tik Tok</span>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a 
+                        href="https://www.facebook.com/TU_PAGINA_FACEBOOK" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-2 text-gray-300 hover:text-taller-accent transition-colors"
+                    >
+                        <div class="w-11 h-11 rounded-full border border-gray-600 flex items-center justify-center hover:border-taller-accent transition-colors">
+                            <img
+                                src="img/socials/fb.svg"
+                                alt="Facebook"
+                                class="w-11 h-11 rounded-full object-cover"
+                            >
+                        </div>
+                        <span class="text-sm font-medium hidden sm:inline">Facebook</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--/section-->
+    </footer>
+
+        <!-- Redes Sociales -->
+
+        <section class="bg-taller-dark py-8 border-t border-gray-800">
+            <div class="max-w-7xl mx-auto py-4 px-4 text-center">
+                <p class="text-gray-500">© 2025 Pintura Industrial Express. Todos los derechos reservados.</p>
+            </div>
+        </section>            
+
+
+    <!-- MODAL DE GALERÍA -->
+    <div id="image-modal" class="fixed inset-0 z-[100] bg-black/90 hidden backdrop-blur-md flex items-center justify-center p-4">
+    <!-- Botón cerrar -->
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+
+        <div class="max-w-6xl w-full bg-taller-dark rounded-2xl overflow-hidden shadow-2xl border border-gray-700 flex flex-col">
+            <!-- Cabecera -->
+            <div class="px-6 py-4 bg-black/60 border-b border-gray-700 flex items-center justify-between">
+                <h3 id="modal-title" class="text-xl font-bold text-white">Restauración Total</h3>
+                <span id="modal-counter" class="text-gray-400 text-sm">Trabajo 1 de 1</span>
+            </div>
+
+            <!-- Área de imágenes -->
+            <div class="relative bg-black">
+                <div id="swipe-area" class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <!-- ANTES -->
+                    <div class="relative flex items-center justify-center aspect-video bg-black">
+                        <img id="img-before"
+                            alt="Antes"
+                            class="w-full h-full object-contain fade-in">
+
+                        <!-- Video para los casos donde 'after' sea mp4 -->
+                        <video id="video-before"
+                            class="w-full h-full object-contain hidden"
+                            autoplay
+                            muted
+                            playsinline
+                            loop
+                            controls>
+                        </video>
+
+                        <span class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded text-xs font-bold">
+                            ANTES
+                        </span>
+                    </div>
+
+                    <!-- DESPUÉS -->
+                    <div class="relative flex items-center justify-center aspect-video bg-black">
+                        <img id="img-after"
+                            alt="Después"
+                            class="w-full h-full object-contain fade-in">
+
+                        <!-- Video para los casos donde 'after' sea mp4 -->
+                        <video id="video-after"
+                            class="w-full h-full object-contain hidden"
+                            autoplay
+                            muted
+                            playsinline
+                            loop
+                            controls>
+                        </video>
+
+
+                        <span class="absolute top-4 left-4 bg-taller-accent text-black px-3 py-1 rounded text-xs font-bold">
+                            DESPUÉS
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Flechas -->
+                <button type="button"
+                        onclick="showPrevWork()"
+                        class="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-400 flex items-center justify-center text-white hover:bg-white/10">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+
+                <button type="button"
+                        onclick="showNextWork()"
+                        class="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-400 flex items-center justify-center text-white hover:bg-white/10">
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </button>
+            
+            </div>
+
+            <!-- Descripción -->
+            <div class="px-6 py-4 bg-[#111827] border-t border-gray-700">
+                <p id="modal-desc" class="text-gray-300 text-sm">
+                    Descripción del trabajo realizado.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inicializar Iconos
+        lucide.createIcons();
+
+        // DATOS DE LA GALERÍA: varios trabajos por proyecto
+        const projects = [
+            {
+                id: 1,
+                title: "Restauración Total",
+                desc: "Reparación de hojalatería mayor y baño de pintura tricapa.",
+                cover: "img/covers/paint.png",
+                works: [
+                    {
+                        before: "img/jobs/Automotriz/f1.png",
+                        after:  "img/jobs/Automotriz/f2.png",
+                    },
+                    {
+                        before: "img/jobs/Automotriz/f3.png",
+                        after:  "img/jobs/Automotriz/f4.png",
+                    },
+                    {
+                        before: "img/jobs/Automotriz/f5.png",
+                        after:  "img/jobs/Automotriz/f6.png",
+                    },                    
+
+                    {
+                        before: "img/jobs/Automotriz/f7.png",
+                        after:  "img/jobs/Automotriz/f8.png",
+                    },  
+
+                    {
+                        before: "img/jobs/Automotriz/f7.png",
+                        after:  "img/jobs/Automotriz/f9.png",
+                    },  
+
+                    {
+                        before: "img/jobs/Automotriz/f10.png",
+                        after:  "img/jobs/Automotriz/f11.png",
+                    },           
+                    
+                    {
+                        before: "img/jobs/Automotriz/f10.png",
+                        after:  "img/jobs/Automotriz/f12.png",
+                    },
+
+                    {
+                        before: "img/jobs/Automotriz/f13.png",
+                        after:  "img/jobs/Automotriz/f14.png",
+                    },     
+                    
+                    {
+                        before: "img/jobs/Automotriz/f13.png",
+                        after:  "img/jobs/Automotriz/f15.png",
+                    },                                   
+                    // ...agrega más trabajos aquí si quieres
+                ]
+            },
+            {
+
+                id: 2,
+                title: "Pintura Industrial",
+                desc: "Recubrimiento epóxico para estructura metálica resistente a corrosión.",
+                cover: "img/covers/machinery.png",
+                works: [
+                    {
+                        before: "img/jobs/Industrial/f1.png",
+                        after:  "img/jobs/Industrial/f2.png",
+                    },
+
+                    {
+                        before: "img/jobs/Industrial/f2.mp4",
+                        after:  "img/jobs/Industrial/f3.png",
+                    },
+
+                    {
+                        before: "img/jobs/Industrial/f4.png",
+                        after:  "img/jobs/Industrial/f5.png",
+                    },
+
+                    {
+                        before: "img/jobs/Industrial/f4.png",
+                        after:  "img/jobs/Industrial/f6.mp4",
+                    },                    
+
+                    {
+                        before: "img/jobs/Industrial/f7.png",
+                        after:  "img/jobs/Industrial/f8.png",
+                    },    
+                    
+                ]
+            },
+
+            {
+                id: 3,
+                title: "Detallado Estético",
+                desc: "Corrección de pintura, pulido espejo y cerámico 3 años.",
+                cover: "img/covers/polish.png",
+                works: [
+                    {
+                        before: "img/jobs/Estetico/f1.png",
+                        after:  "img/jobs/Estetico/f2.png",
+                    },
+
+                    {
+                        before: "img/jobs/Estetico/f3.png",
+                        after:  "img/jobs/Estetico/f4.png",
+                    },
+
+                    {
+                        before: "img/jobs/Estetico/f5.png",
+                        after:  "img/jobs/Estetico/f6.png",
+                    },        
+
+                    {
+                        before: "img/jobs/Estetico/f7.png",
+                        after:  "img/jobs/Estetico/f8.png",
+                    },                                
+                ]
+            }
+        ];
+
+        // Renderizar Galería (cards iniciales)
+        const galleryGrid = document.getElementById('gallery-grid');
+        
+        projects.forEach(project => {
+            const item = document.createElement('div');
+            item.className = 'relative group overflow-hidden rounded-xl aspect-video bg-gray-800 cursor-pointer border border-gray-700 hover:border-taller-accent transition-all';
+            item.onclick = function () { openModal(project.id); };
+
+            const coverSrc =
+                project.cover ||                                           // 👈 portada fija
+                (project.works && project.works[0] &&
+                (project.works[0].after || project.works[0].before)) ||   // fallback por si acaso
+                '';
+
+            item.innerHTML = `
+                <img src="${coverSrc}" alt="${project.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-taller-accent text-xs font-bold tracking-wider uppercase mb-1">Ver Antes / Después</span>
+                    <span class="text-white font-bold text-lg">${project.title}</span>
+                </div>
+                <div class="absolute top-3 right-3 bg-black/50 backdrop-blur p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                </div>
+            `;
+            galleryGrid.appendChild(item);
+            lucide.createIcons(); // Refrescar iconos nuevos
+        });
+
+        // --- Lógica del Modal ---
+
+        let currentProject = null;
+        let currentWorkIndex = 0; // índice del trabajo dentro del proyecto
+
+        const modal        = document.getElementById('image-modal');
+        const modalTitle   = document.getElementById('modal-title');
+        const modalDesc    = document.getElementById('modal-desc');
+        const modalCounter = document.getElementById('modal-counter');
+        const imgBefore    = document.getElementById('img-before');
+        const imgAfter     = document.getElementById('img-after');
+        const videoBefore = document.getElementById('video-before');          
+        const videoAfter = document.getElementById('video-after');        
+        const swipeArea    = document.getElementById('swipe-area');
+
+        function isVideo(src) {
+            return !!src && /\.(mp4|webm|ogg)$/i.test(src);
+        }
+
+        function renderCurrentWork() {
+            if (!currentProject || !currentProject.works || currentProject.works.length === 0) return;
+
+            const w = currentProject.works[currentWorkIndex];
+
+            // BEFORE puede ser imagen o video
+            const beforeSrc = w.before || w.after || '';
+
+            // AFTER puede ser imagen o video
+            const afterSrc = w.after || w.before || '';
+
+            if (isVideo(afterSrc)) {
+                // Mostrar video, ocultar imagen
+                imgAfter.classList.add('hidden');
+                videoAfter.classList.remove('hidden');
+
+                // Resetear y cargar fuente nueva
+                videoAfter.pause();
+                videoAfter.removeAttribute('src');
+                videoAfter.load();
+
+                videoAfter.src = afterSrc;
+                videoAfter.load();
+
+                // Intentar autoplay
+                videoAfter.currentTime = 0;
+                const playPromise = videoAfter.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {
+                        // Si el navegador lo bloquea, no pasa nada, solo no hacemos nada aquí
+                    });
+                }
+            } else {
+                // Mostrar imagen, ocultar video
+                videoAfter.pause();
+                videoAfter.currentTime = 0;
+                videoAfter.classList.add('hidden');
+                imgAfter.classList.remove('hidden');
+
+                imgAfter.src = afterSrc;
+            }
+
+            if (isVideo(beforeSrc)) {
+                // Mostrar video, ocultar imagen
+                imgBefore.classList.add('hidden');
+                videoBefore.classList.remove('hidden');
+
+                // Resetear y cargar fuente nueva
+                videoBefore.pause();
+                videoBefore.removeAttribute('src');
+                videoBefore.load();
+
+                videoBefore.src = beforeSrc;
+                videoBefore.load();
+
+                // Intentar autoplay
+                videoBefore.currentTime = 0;
+                const playPromise = videoBefore.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {
+                        // Si el navegador lo bloquea, no pasa nada, solo no hacemos nada aquí
+                    });
+                }
+            } else {
+                // Mostrar imagen, ocultar video
+                videoBefore.pause();
+                videoBefore.currentTime = 0;
+                videoBefore.classList.add('hidden');
+                imgBefore.classList.remove('hidden');
+
+                imgBefore.src = beforeSrc;
+            }
+
+            // (lo demás de tu función se queda igual)
+            modalTitle.textContent = currentProject.title;
+            modalDesc.textContent  = currentProject.desc;
+            if (modalCounter) {
+                modalCounter.textContent = `Trabajo ${currentWorkIndex + 1} de ${currentProject.works.length}`;
+            }
+        }
+
+
+        
+        function openModal(id) {
+            currentProject = projects.find(p => p.id === id) || null;
+            currentWorkIndex = 0; // siempre empezamos por el primer trabajo
+
+            if (!currentProject) return;
+
+            renderCurrentWork();
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+
+            // Pausar video si estaba reproduciéndose
+            if (videoAfter) {
+                videoAfter.pause();
+                videoAfter.currentTime = 0;
+            }
+        }
+
+        function showPrevWork() {
+            if (!currentProject || !currentProject.works || currentProject.works.length === 0) return;
+            const total = currentProject.works.length;
+            currentWorkIndex = (currentWorkIndex - 1 + total) % total; // circular
+            renderCurrentWork();
+        }
+
+        function showNextWork() {
+            if (!currentProject || !currentProject.works || currentProject.works.length === 0) return;
+            const total = currentProject.works.length;
+            currentWorkIndex = (currentWorkIndex + 1) % total; // circular
+            renderCurrentWork();
+        }
+
+        // Cerrar modal al hacer click en el fondo oscuro
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) closeModal();
+        });
+
+        // --- Swipe en móvil para cambiar de trabajo ---
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        if (swipeArea) {
+            swipeArea.addEventListener('touchstart', function (e) {
+                touchStartX = e.changedTouches[0].clientX;
+            }, { passive: true });
+
+            swipeArea.addEventListener('touchend', function (e) {
+                touchEndX = e.changedTouches[0].clientX;
+                handleSwipe();
+            }, { passive: true });
+        }
+
+        function handleSwipe() {
+            const diff = touchEndX - touchStartX;
+            const threshold = 50; // px mínimos
+
+            if (Math.abs(diff) < threshold) return;
+
+            if (diff < 0) {
+                // swipe hacia la izquierda -> siguiente trabajo
+                showNextWork();
+            } else {
+                // swipe hacia la derecha -> trabajo anterior
+                showPrevWork();
+            }
+        }
+
+        // --- Menú Móvil ---
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // --- Navbar Scroll Shadow ---
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+
+</body>
+</html>
