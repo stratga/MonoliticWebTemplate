@@ -60,7 +60,11 @@
             -webkit-text-fill-color: transparent; /* Asegura transparencia en Webkit */
             color: transparent;
             /* Definimos el gradiente aquí también por seguridad, heredando los colores de Tailwind */
-            background-image: linear-gradient(to right, #f59e0b, #fef08a);
+            background-image: repeating-linear-gradient(
+                                45deg,
+                                #f59e0b,
+                                #f59e0b 20px
+                            );
         }
 
         .scroll-smooth {
@@ -121,7 +125,7 @@
                 <span class="text-taller-accent font-bold tracking-wide text-sm uppercase">Especialistas en Estética</span>
             </div>
             <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
-                Pintura Automotriz <br> y <span class="gradient-text">Restauración Industrial</span>
+                Pintura Automotriz <br> y <span class="gradient-text bg-clip-text">Restauración Industrial</span>
             </h1>
             <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight"></h1>
                 <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
