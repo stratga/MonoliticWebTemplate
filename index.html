@@ -40,6 +40,12 @@
             background-position: center;
         }
 
+        .hero-subtitle {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }        
+
         /* Fijar el fondo solo en pantallas grandes (opcional) */
         @media (min-width: 1024px) {
             .hero-bg {
@@ -101,30 +107,22 @@
     <section id="inicio" class="hero-bg h-screen flex items-center justify-center text-center px-4">
         <div class="max-w-4xl mx-auto mt-16">
             <div class="inline-block p-2 px-4 rounded-full bg-taller-accent/20 border border-taller-accent/50 mb-6 backdrop-blur-md">
-                <span class="text-taller-accent font-bold tracking-wide text-sm uppercase">
-                    Especialistas en Estética
-                </span>
+                <span class="text-taller-accent font-bold tracking-wide text-sm uppercase">Especialistas en Estética</span>
             </div>
-
             <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
-                <span class="block">Pintura Automotriz</span>
-                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-taller-accent to-yellow-200">
-                    Restauración Industrial
-                </span>
+                Pintura Automotriz <br> y <span class="text-transparent bg-clip-text bg-gradient-to-r from-taller-accent to-yellow-200">Restauración Industrial</span>
             </h1>
-
-            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-xl md:max-w-2xl mx-auto">
-                Aplicación profesional de reparación, pintura automotriz y detallado de alto nivel.
-                Transformamos superficies con calidad industrial.
-            </p>
-
+            <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight"></h1>
+                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                    Aplicación profesional de recubrimientos, pintura automotriz y detallado de alto nivel. Transformamos superficies con calidad industrial.
+                </p>
+            </h1>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/5219931098186" target="_blank"
-                    class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-green-900/50">
+                <a href="https://wa.me/5219931098186" target="_blank" class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-green-900/50">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
                     Cotizar Ahora
                 </a>
-                <a href="#galeria"
-                    class="flex items-center justify-center gap-2 bg-transparent border-2 border-white hover:bg-white hover:text-taller-black text-white px-8 py-4 rounded-full text-lg font-bold transition-all">
+                <a href="#galeria" class="flex items-center justify-center gap-2 bg-transparent border-2 border-white hover:bg-white hover:text-taller-black text-white px-8 py-4 rounded-full text-lg font-bold transition-all">
                     Ver Proyectos
                 </a>
             </div>
@@ -349,7 +347,7 @@
         <div class="max-w-6xl w-full bg-taller-dark rounded-2xl overflow-hidden shadow-2xl border border-gray-700 flex flex-col">
             <!-- Cabecera -->
             <div class="px-6 py-4 bg-black/60 border-b border-gray-700 flex items-center justify-between">
-                <h3 id="modal-title" class="text-xl font-bold text-white">Restauración Total</h3>
+                <h3 id="modal-title" class="text-xl font-bold text-white">Pixan Bo</h3>
                 <span id="modal-counter" class="text-gray-400 text-sm">Trabajo 1 de 1</span>
             </div>
 
@@ -547,31 +545,58 @@
 
         // Renderizar Galería (cards iniciales)
         const galleryGrid = document.getElementById('gallery-grid');
-        
+
         projects.forEach(project => {
             const item = document.createElement('div');
-            item.className = 'relative group overflow-hidden rounded-xl aspect-video bg-gray-800 cursor-pointer border border-gray-700 hover:border-taller-accent transition-all';
+
+            // El contenedor ahora es una card completa
+            item.className =
+                'group rounded-2xl overflow-hidden bg-[#060e1f] cursor-pointer ' +
+                'border border-gray-700 hover:border-taller-accent transition-all';
+            
             item.onclick = function () { openModal(project.id); };
 
             const coverSrc =
-                project.cover ||                                           // 👈 portada fija
+                project.cover ||                                           // portada fija
                 (project.works && project.works[0] &&
-                (project.works[0].after || project.works[0].before)) ||   // fallback por si acaso
+                (project.works[0].after || project.works[0].before)) ||   // fallback
                 '';
 
             item.innerHTML = `
-                <img src="${coverSrc}" alt="${project.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-taller-accent text-xs font-bold tracking-wider uppercase mb-1">Ver Antes / Después</span>
-                    <span class="text-white font-bold text-lg">${project.title}</span>
+                <!-- Imagen + overlay -->
+                <div class="relative aspect-video overflow-hidden">
+                    <img src="${coverSrc}" alt="${project.title}"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+                    <!-- Overlay solo para hover -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent
+                                opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-taller-accent text-[11px] font-bold tracking-wider uppercase">
+                            Ver Antes / Después
+                        </span>
+                    </div>
+
+                    <!-- Icono lupa -->
+                    <div class="absolute top-3 right-3 bg-black/50 backdrop-blur p-2 rounded-full
+                                opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                    </div>
                 </div>
-                <div class="absolute top-3 right-3 bg-black/50 backdrop-blur p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+
+                <!-- Texto debajo de la imagen -->
+                <div class="px-4 py-4">
+                    <h3 class="text-white font-bold text-lg">
+                        ${project.title}
+                    </h3>
                 </div>
             `;
+
             galleryGrid.appendChild(item);
-            lucide.createIcons(); // Refrescar iconos nuevos
         });
+
+        // Refrescar iconos una sola vez al final (opcional)
+        lucide.createIcons();
+
 
         // --- Lógica del Modal ---
 
